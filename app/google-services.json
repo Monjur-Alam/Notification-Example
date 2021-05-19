@@ -1,0 +1,130 @@
+{
+  "project_info": {
+    "project_number": "616053512017",
+    "firebase_url": "https://bloodline-e49ff.firebaseio.com",
+    "project_id": "bloodline-e49ff",
+    "storage_bucket": "bloodline-e49ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616053512017:android:b05a1af1fa6905a0",
+        "android_client_info": {
+          "package_name": "com.example.monju.bloodline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616053512017-f5enuh4vvr3qu5506bsu03nkb94l9kqe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.monju.bloodline",
+            "certificate_hash": "424edd8cba9a113f3412853bf392ea9ddc4e27d5"
+          }
+        },
+        {
+          "client_id": "616053512017-vtkl0qdvh2e6928rs0sedg6h8hc4ppvf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.monju.bloodline",
+            "certificate_hash": "28700221f3fb1fa5038bcf7a83ab624ce6e4d30c"
+          }
+        },
+        {
+          "client_id": "616053512017-ha6on1343u8dg48005skmh6e08fpsctj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaXqP07tV8BXPgvNDyVEWfOjSVMuj_BBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616053512017-ha6on1343u8dg48005skmh6e08fpsctj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616053512017:android:eb8851a08081495d872570",
+        "android_client_info": {
+          "package_name": "com.example.notificationexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616053512017-m9q77mdt25he59554bj1adhsmhchouk3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.notificationexample",
+            "certificate_hash": "a43d6d3578da828502bbae04af1754077681e4f3"
+          }
+        },
+        {
+          "client_id": "616053512017-ha6on1343u8dg48005skmh6e08fpsctj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaXqP07tV8BXPgvNDyVEWfOjSVMuj_BBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616053512017-ha6on1343u8dg48005skmh6e08fpsctj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616053512017:android:d67ee5ef81aef4df872570",
+        "android_client_info": {
+          "package_name": "com.gsastc.monju.bloodline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616053512017-p8vol6am33h01t86hgbu80el5uebrut8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gsastc.monju.bloodline",
+            "certificate_hash": "7e22b2877c55915130b19a1bbde9e11a9030a956"
+          }
+        },
+        {
+          "client_id": "616053512017-ha6on1343u8dg48005skmh6e08fpsctj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaXqP07tV8BXPgvNDyVEWfOjSVMuj_BBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616053512017-ha6on1343u8dg48005skmh6e08fpsctj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
