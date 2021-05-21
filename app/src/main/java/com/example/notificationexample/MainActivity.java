@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.media.session.MediaSessionCompat;
 import android.view.View;
 import android.widget.EditText;
@@ -98,14 +99,30 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void sendOnChannel2(View v) {
-        String title = editTextTitle.getText().toString();
-        String message = editTextMessage.getText().toString();
-        Notification notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
+        final int progressMax = 100;
+        final NotificationCompat.Builder notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
                 .setSmallIcon(R.drawable.ic_two)
-                .setContentTitle(title)
-                .setContentText(message)
+                .setContentTitle("Tahsan Song.mp3")
+                .setContentText("Download in progress")
                 .setPriority(NotificationCompat.PRIORITY_LOW)
-                .build();
-        notificationManager.notify(2, notification);
+                .setOngoing(true)
+                .setOnlyAlertOnce(true)
+                .setProgress(progressMax, 0, false);
+        notificationManager.notify(2, notification.build());
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(2000);
+                for (int progress = 0; progress <= progressMax; progress += 10) {
+                    notification.setProgress(progressMax, progress, false);
+                    notificationManager.notify(2, notification.build());
+                    SystemClock.sleep(1000);
+                }
+                notification.setContentText("Download finished")
+                        .setProgress(0, 0, false)
+                        .setOngoing(false);
+                notificationManager.notify(2, notification.build());
+            }
+        }).start();
     }
 }
