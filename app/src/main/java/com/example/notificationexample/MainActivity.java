@@ -99,30 +99,41 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void sendOnChannel2(View v) {
-        final int progressMax = 100;
-        final NotificationCompat.Builder notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
+        String title1 = "Title 1";
+        String message1 = "Message 1";
+        String title2 = "Title 2";
+        String message2 = "Message 2";
+        Notification notification1 = new NotificationCompat.Builder(this, CHANNEL_2_ID)
                 .setSmallIcon(R.drawable.ic_two)
-                .setContentTitle("Tahsan Song.mp3")
-                .setContentText("Download in progress")
+                .setContentTitle(title1)
+                .setContentText(message1)
                 .setPriority(NotificationCompat.PRIORITY_LOW)
-                .setOngoing(true)
-                .setOnlyAlertOnce(true)
-                .setProgress(progressMax, 0, false);
-        notificationManager.notify(2, notification.build());
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                SystemClock.sleep(2000);
-                for (int progress = 0; progress <= progressMax; progress += 10) {
-                    notification.setProgress(progressMax, progress, false);
-                    notificationManager.notify(2, notification.build());
-                    SystemClock.sleep(1000);
-                }
-                notification.setContentText("Download finished")
-                        .setProgress(0, 0, false)
-                        .setOngoing(false);
-                notificationManager.notify(2, notification.build());
-            }
-        }).start();
+                .setGroup("example_group")
+                .build();
+        Notification notification2 = new NotificationCompat.Builder(this, CHANNEL_2_ID)
+                .setSmallIcon(R.drawable.ic_two)
+                .setContentTitle(title2)
+                .setContentText(message2)
+                .setPriority(NotificationCompat.PRIORITY_LOW)
+                .setGroup("example_group")
+                .build();
+        Notification summaryNotification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
+                .setSmallIcon(R.drawable.ic_reply)
+                .setStyle(new NotificationCompat.InboxStyle()
+                        .addLine(title2 + " " + message2)
+                        .addLine(title1 + " " + message1)
+                        .setBigContentTitle("2 new messages")
+                        .setSummaryText("user@example.com"))
+                .setPriority(NotificationCompat.PRIORITY_LOW)
+                .setGroup("example_group")
+                .setGroupAlertBehavior(NotificationCompat.GROUP_ALERT_CHILDREN)
+                .setGroupSummary(true)
+                .build();
+        SystemClock.sleep(2000);
+        notificationManager.notify(2, notification1);
+        SystemClock.sleep(2000);
+        notificationManager.notify(3, notification2);
+        SystemClock.sleep(2000);
+        notificationManager.notify(4, summaryNotification);
     }
 }
