@@ -27,6 +27,7 @@ import java.util.List;
 
 import static com.example.notificationexample.App.CHANNEL_1_ID;
 import static com.example.notificationexample.App.CHANNEL_2_ID;
+import static com.example.notificationexample.App.GROUP_1_ID;
 
 public class MainActivity extends AppCompatActivity {
     private NotificationManagerCompat notificationManager;
@@ -149,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
         SystemClock.sleep(2000);
         notificationManager.notify(4, summaryNotification);
     }
+
     private void openNotificationSettings() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Intent intent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
@@ -160,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
     @RequiresApi(26)
     private boolean isChannelBlocked(String channelId) {
         NotificationManager manager = getSystemService(NotificationManager.class);
@@ -167,11 +170,20 @@ public class MainActivity extends AppCompatActivity {
         return channel != null &&
                 channel.getImportance() == NotificationManager.IMPORTANCE_NONE;
     }
+
     @RequiresApi(26)
     private void openChannelSettings(String channelId) {
         Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
         intent.putExtra(Settings.EXTRA_APP_PACKAGE, getPackageName());
         intent.putExtra(Settings.EXTRA_CHANNEL_ID, channelId);
         startActivity(intent);
+    }
+
+    public void deleteNotificationChannels(View v) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            //manager.deleteNotificationChannel(CHANNEL_3_ID);
+            manager.deleteNotificationChannelGroup(GROUP_1_ID);
+        }
     }
 }

@@ -26,4 +26,9 @@
         android:layout_height="wrap_content"
         android:onClick="sendOnChannel2"
         android:text="Send on Channel 2" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="deleteNotificationChannels"
+        android:text="Delete Channels" />
 </LinearLayout>
